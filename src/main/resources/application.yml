@@ -1,0 +1,42 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: YOUR_GOOGLE_CLIENT_ID
+            client-secret: YOUR_GOOGLE_CLIENT_SECRET
+            redirect-uri-template: "{baseUrl}/login/oauth2/code/google"
+            authorization-grant-type: authorization_code
+          facebook:
+            client-id: YOUR_FACEBOOK_APP_ID
+            client-secret: YOUR_FACEBOOK_APP_SECRET
+            redirect-uri-template: "{baseUrl}/login/oauth2/code/facebook"
+            authorization-grant-type: authorization_code
+          linkedin:
+            client-id: YOUR_LINKEDIN_CLIENT_ID
+            client-secret: YOUR_LINKEDIN_CLIENT_SECRET
+            redirect-uri-template: "{baseUrl}/login/oauth2/code/linkedin"
+            authorization-grant-type: authorization_code
+          azure:
+            client-id: YOUR_AZURE_CLIENT_ID
+            client-secret: YOUR_AZURE_CLIENT_SECRET
+            redirect-uri-template: "{baseUrl}/login/oauth2/code/azure"
+            authorization-grant-type: authorization_code
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://openidconnect.googleapis.com/v1/userinfo
+          facebook:
+            authorization-uri: https://www.facebook.com/v9.0/dialog/oauth
+            token-uri: https://graph.facebook.com/v9.0/oauth/access_token
+            user-info-uri: https://graph.facebook.com/me?fields=id,name,email
+          linkedin:
+            authorization-uri: https://www.linkedin.com/oauth/v2/authorization
+            token-uri: https://www.linkedin.com/oauth/v2/accessToken
+            user-info-uri: https://api.linkedin.com/v2/me
+          azure:
+            authorization-uri: "https://YOUR_TENANT.b2clogin.com/YOUR_TENANT/oauth2/v2.0/authorize?p=YOUR_USER_FLOW"
+            token-uri: "https://YOUR_TENANT.b2clogin.com/YOUR_TENANT/oauth2/v2.0/token?p=YOUR_USER_FLOW"
+            user-info-uri: "https://YOUR_TENANT.b2clogin.com/YOUR_TENANT/openid/userinfo?p=YOUR_USER_FLOW"
